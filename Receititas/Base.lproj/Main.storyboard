@@ -37,6 +37,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G6a-xf-IUa">
                                 <rect key="frame" x="159.5" y="388" width="95" height="34"/>
                                 <state key="normal" title="Pão de Queijo"/>
+                                <connections>
+                                    <segue destination="sQh-DN-aGj" kind="presentation" id="KAr-r8-AbR"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -58,11 +61,99 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="115.84821428571428"/>
+            <point key="canvasLocation" x="7" y="116"/>
+        </scene>
+        <!--Receita View Controller-->
+        <scene sceneID="Aae-1f-34y">
+            <objects>
+                <viewController id="sQh-DN-aGj" customClass="ReceitaViewController" customModule="Receititas" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="y8P-MJ-xmv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pão de Queijo " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jc-PP-cwI">
+                                <rect key="frame" x="140.5" y="391" width="133" height="24"/>
+                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredientes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqD-2K-ci1">
+                                <rect key="frame" x="20" y="390" width="95" height="166"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 porção" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfk-vr-4WX">
+                                <rect key="frame" x="314" y="505" width="65" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="aQb-41-cmk">
+                                <rect key="frame" x="299" y="457" width="95" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="S6k-T4-gMH"/>
+                                </constraints>
+                            </stepper>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aeW-JM-Mok">
+                                <rect key="frame" x="20" y="494" width="200" height="174"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">100g de café
+200ml de leite</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8C-6r-ols">
+                                <rect key="frame" x="187" y="638" width="41" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Voltar"/>
+                                <connections>
+                                    <action selector="onBackButtonPressed:" destination="sQh-DN-aGj" eventType="touchUpInside" id="DNO-a7-cKK"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="PaoDeQueijo" translatesAutoresizingMaskIntoConstraints="NO" id="J3V-Io-uhw">
+                                <rect key="frame" x="0.0" y="-32" width="414" height="360"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="J3V-Io-uhw" secondAttribute="height" multiplier="23:20" id="wsV-Pz-POv"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lAG-gh-pgc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="aQb-41-cmk" firstAttribute="centerY" secondItem="jqD-2K-ci1" secondAttribute="centerY" id="5lN-rW-JtT"/>
+                            <constraint firstItem="aQb-41-cmk" firstAttribute="leading" secondItem="aeW-JM-Mok" secondAttribute="trailing" constant="26" id="BNi-xb-dCB"/>
+                            <constraint firstItem="pfk-vr-4WX" firstAttribute="centerX" secondItem="aQb-41-cmk" secondAttribute="centerX" id="Iiq-wh-hI9"/>
+                            <constraint firstAttribute="trailing" secondItem="J3V-Io-uhw" secondAttribute="trailing" id="LK3-mI-Van"/>
+                            <constraint firstItem="aQb-41-cmk" firstAttribute="trailing" secondItem="y8P-MJ-xmv" secondAttribute="trailingMargin" id="UnO-jK-mLW"/>
+                            <constraint firstItem="aQb-41-cmk" firstAttribute="top" secondItem="J3V-Io-uhw" secondAttribute="bottom" constant="97" id="Vru-f9-uMa"/>
+                            <constraint firstItem="pfk-vr-4WX" firstAttribute="top" secondItem="aQb-41-cmk" secondAttribute="bottom" constant="16" id="azd-GM-7fo"/>
+                            <constraint firstItem="aeW-JM-Mok" firstAttribute="top" secondItem="jqD-2K-ci1" secondAttribute="bottom" constant="-8" id="bnD-oW-Jax"/>
+                            <constraint firstItem="lAG-gh-pgc" firstAttribute="bottom" secondItem="aeW-JM-Mok" secondAttribute="bottom" constant="191" id="cwm-5h-xOu"/>
+                            <constraint firstItem="J3V-Io-uhw" firstAttribute="top" secondItem="y8P-MJ-xmv" secondAttribute="top" id="h7j-yq-b0J"/>
+                            <constraint firstItem="7jc-PP-cwI" firstAttribute="centerX" secondItem="y8P-MJ-xmv" secondAttribute="centerX" id="hef-3E-VDJ"/>
+                            <constraint firstItem="lAG-gh-pgc" firstAttribute="trailing" secondItem="aeW-JM-Mok" secondAttribute="trailing" constant="141" id="m1O-5u-R0H"/>
+                            <constraint firstItem="jqD-2K-ci1" firstAttribute="top" secondItem="J3V-Io-uhw" secondAttribute="bottom" constant="30" id="mu6-Qi-Thx"/>
+                            <constraint firstItem="jqD-2K-ci1" firstAttribute="leading" secondItem="lAG-gh-pgc" secondAttribute="leading" constant="20" id="tVi-eE-v1z"/>
+                            <constraint firstItem="7jc-PP-cwI" firstAttribute="top" secondItem="J3V-Io-uhw" secondAttribute="bottom" constant="31" id="u1y-c9-7zk"/>
+                            <constraint firstItem="J3V-Io-uhw" firstAttribute="leading" secondItem="y8P-MJ-xmv" secondAttribute="leading" id="wbz-EF-bbs"/>
+                            <constraint firstItem="aeW-JM-Mok" firstAttribute="leading" secondItem="lAG-gh-pgc" secondAttribute="leading" constant="20" id="wza-cH-Z2i"/>
+                            <constraint firstItem="jqD-2K-ci1" firstAttribute="top" secondItem="J3V-Io-uhw" secondAttribute="bottom" constant="30" id="zz2-nm-52f"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sra-Ry-DcR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="802.89855072463774" y="115.84821428571428"/>
         </scene>
     </scenes>
     <resources>
         <image name="PaoDeQueijo" width="408" height="240"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
