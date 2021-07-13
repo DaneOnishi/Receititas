@@ -20,4 +20,11 @@ class ReceitaViewController: UIViewController {
     }
     
 
+    @IBAction func showRecipe(_ sender: UITapGestureRecognizer) {
+        if let vc = storyboard?.instantiateViewController(identifier: "receitas") {
+            self.navigationController?.show(vc, sender: self)
+        }
+        
+    }
+    
 }
